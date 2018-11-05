@@ -1,6 +1,9 @@
 package com.personal;
 
 import com.personal.playWithAlg.class1_3.Permutation;
+import personal.playWithAlg.class1_3.MergeSort;
+
+import java.util.Arrays;
 
 public class Main {
 
@@ -19,10 +22,13 @@ public class Main {
 
 
         /** 字符串全排问题 */
-        char[] s = {'a','b','c'};
-        Permutation.permutation3(s, 0, s.length - 1);
+//        char[] s = {'a','b','c'};
+//        Permutation.permutation3(s, 0, s.length - 1);
 
-
+        /** 合并/归并 排序 */
+        int a[] = { 51, 46, 20, 18, 65, 97, 82, 30, 77, 50 };
+        MergeSort.mergeSort(a, 0, a.length - 1);
+        System.out.println("排序结果：" + Arrays.toString(a));
 
     }
 }
