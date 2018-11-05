@@ -43,7 +43,7 @@ public class Permutation {
     }
 
     public static void permutation2(char[] s, int from, int to){
-        System.out.println(" 手写第二遍练习 ");
+        System.out.println("  ");
 
         if (to <= 1){
             return; //如果char数组只包含一个元素那么就直接返回
