@@ -2,6 +2,8 @@ package com.personal.playWithAlg.class1_3;
 
 /**
  * Created by mingyue on 2018/10/21.
+ *
+ * 字符串全排问题
  */
 public class Permutation {
 
@@ -38,6 +40,26 @@ public class Permutation {
                 swap(s, i, from);       //交换前缀，使其产生下一个前缀
                 permutation(s, from + 1, to);  /** 递归三要素之三：如何变成更小的状态，这里from每次+1，使得要分解的字符串越来越小 */
                 swap(s, from, i);       //将前缀换回，继续做上一个前缀的排序
+            }
+        }
+    }
+
+    /**
+     *  感悟：还是从一个树上遍历完成后，跳出后在换到一个新的分支上
+     */
+    public static void permutation3(char[] s, int from, int to) {
+        System.out.print(" ");
+        if (to <= 1) {
+            return; //如果只包含一个元素，直接输出该元素
+        }
+        //如果取的数组的首尾项相同表示已经取到最后一个元素了
+        if (from == to) {
+            System.out.println(s); //这里就可以直接打印已经调换完为止的数组
+        } else {
+            for (int i = from; i <= to; i++) {
+                swap(s, i, from); //交换前缀，使其产生下一个前缀
+                permutation3(s, from + 1, to);
+                swap(s,from, i); //将前缀换回，继续做上一个前缀的排序
             }
         }
     }

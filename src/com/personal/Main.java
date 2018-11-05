@@ -20,7 +20,7 @@ public class Main {
 
         /** 字符串全排问题 */
         char[] s = {'a','b','c'};
-        Permutation.permutation2(s, 0, s.length - 1);
+        Permutation.permutation3(s, 0, s.length - 1);
 
 
 
