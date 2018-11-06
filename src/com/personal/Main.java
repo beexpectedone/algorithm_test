@@ -1,6 +1,7 @@
 package com.personal;
 
 import com.personal.playWithAlg.class1_3.Permutation;
+import personal.playWithAlg.class1_3.BinarySearch;
 import personal.playWithAlg.class1_3.MergeSort;
 
 import java.util.Arrays;
@@ -26,9 +27,22 @@ public class Main {
 //        Permutation.permutation3(s, 0, s.length - 1);
 
         /** 合并/归并 排序 */
-        int a[] = { 51, 46, 20, 18, 65, 97, 82, 30, 77, 50 };
-        MergeSort.mergeSort(a, 0, a.length - 1);
-        System.out.println("排序结果：" + Arrays.toString(a));
+//        int a[] = { 51, 46, 20, 18, 65, 97, 82, 30, 77, 50 };
+//        MergeSort.mergeSort(a, 0, a.length - 1);
+//        System.out.println("排序结果：" + Arrays.toString(a));
+
+
+        /** 二分法查找 */
+        int[] arr = {1, 3, 5, 7, 9, 11};
+        int key = 5;
+        int position = BinarySearch.binarySearchByRecursion(arr, key, 0, arr.length - 1);
+
+//        int position = BinarySearch.binarySearchWithoutRecursion(arr,5);
+        if (position == -1){
+            System.out.println("查找的是" + key + ",序列中没有该数！");
+        } else {
+            System.out.println("查找的是" + key + ",找到位置为："+position);
+        }
 
     }
 }
