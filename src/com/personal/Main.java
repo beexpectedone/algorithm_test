@@ -1,6 +1,7 @@
 package com.personal;
 
 import com.personal.playWithAlg.class1_3.QuickSort;
+import personal.playWithAlg.class1_3.Karatsuba;
 
 import java.util.Arrays;
 
@@ -43,9 +44,13 @@ public class Main {
 //        }
 
         /** 快速排序 */
-        int a[] = { 51, 46, 20, 18, 65, 97, 82, 30, 77, 50 };
-        QuickSort.quickSort(a);
-        System.out.println("排序结果：" + Arrays.toString(a));
+//        int a[] = { 51, 46, 20, 18, 65, 97, 82, 30, 77, 50 };
+//        QuickSort.quickSort(a);
+//        System.out.println("排序结果：" + Arrays.toString(a));
+
+        /** Karatsuba */
+        long result = Karatsuba.karatsuba(1515, 1616);
+        System.out.println("计算结果为：.........................." + result);
 
     }
 }

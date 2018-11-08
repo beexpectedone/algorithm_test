@@ -42,9 +42,9 @@ public class MergeSort {
     public static void mergeSort(int[] a, int low, int high) {
         int mid = (low + high) / 2;
         if (low < high) {
-            mergeSort(a, low, mid);
+            mergeSort(a, low, mid); /** 次级拆分 */
             mergeSort(a, mid + 1, high);
-            merge(a, low, mid, high);
+            merge(a, low, mid, high);  /** 同级组合Merge */
             System.out.println(Arrays.toString(a));
         }
     }
