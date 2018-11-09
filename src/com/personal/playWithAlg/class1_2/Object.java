@@ -13,6 +13,23 @@ public class Object {
     int price; //每个物品的价格
     int status; // 0：未选中  1：已选中 2：已经不可选
 
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public int getStatus() {
         return status;
     }

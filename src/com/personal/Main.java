@@ -1,9 +1,11 @@
 package com.personal;
 
+import com.personal.playWithAlg.class1_2.Object;
 import com.personal.playWithAlg.class1_3.QuickSort;
 import personal.playWithAlg.class1_3.Karatsuba;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -19,6 +21,10 @@ public class Main {
 //                System.out.println(subsets.get(i));
 //            }
 //        }
+
+        /** 0 - 1 背包问题 */
+        List<Object> srcObjs = com.personal.playWithAlg.class1_2.KnapsackProblem.initDate();
+        new com.personal.playWithAlg.class1_2.KnapsackProblem().GreedyAlgo(srcObjs, 150);
 
 
         /** 字符串全排问题 */
@@ -49,8 +55,8 @@ public class Main {
 //        System.out.println("排序结果：" + Arrays.toString(a));
 
         /** Karatsuba */
-        long result = Karatsuba.karatsuba(1515, 1616);
-        System.out.println("计算结果为：.........................." + result);
+//        long result = Karatsuba.karatsuba(1515, 1616);
+//        System.out.println("计算结果为：.........................." + result);
 
     }
 }
