@@ -66,7 +66,7 @@ public class BinarySearch {
      * 二分法的变种问题-----Last Position of Target(取角标最后出现的位置)
      * 找最后出现的位置时，就要让角标向高位移动
      *
-     * @param A an integer array sorted in ascending order
+     * @param nums an integer array sorted in ascending order
      * @param target an integer
      * @return an integer
      */
@@ -123,7 +123,7 @@ public class BinarySearch {
             return start;
         }
         if (nums[end] == target) {
-            return end
+            return end;
         }
         return -1;
     }
