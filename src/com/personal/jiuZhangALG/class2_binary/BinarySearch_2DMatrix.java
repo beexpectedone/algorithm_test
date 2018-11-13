@@ -1,4 +1,4 @@
-package personal.jiuZhangALG.class2_binary;
+package com.personal.jiuZhangALG.class2_binary;
 
 
 public class BinarySearch_2DMatrix {
@@ -61,4 +61,46 @@ public class BinarySearch_2DMatrix {
         }
         return false;
     }
+
+    /**
+     * [
+         [1, 3, 5, 7],
+         [10, 11, 16, 20],
+         [23, 30, 34, 50]
+       ]
+     *
+     *
+     * @param matrix
+     * @param target
+     * @return
+     */
+    public static boolean searchMatrixOnce(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0) {
+            return false;
+        }
+        if (matrix[0] == null || matrix[0].length == 0 ){
+            return false;
+        }
+
+        int row = matrix.length; //3
+        int column = matrix[0].length; //4
+
+        int start = 0, end = row * column - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            /** mid/column 能确定该元素在哪一行，mid%column 能确定该元素在哪一列 */
+            int number = matrix[mid / column][mid % column]; // 这部最为关键和灵巧
+            if (number == target) {
+                return true;
+            }else if (number >target) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+
+        return false;
+    }
+
+
 }

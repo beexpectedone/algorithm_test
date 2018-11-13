@@ -1,10 +1,8 @@
 package com.personal;
 
+import com.personal.jiuZhangALG.class2_binary.BinarySearch_2DMatrix;
 import com.personal.playWithAlg.class1_2.Object;
-import com.personal.playWithAlg.class1_3.QuickSort;
-import personal.playWithAlg.class1_3.Karatsuba;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -58,5 +56,8 @@ public class Main {
 //        long result = Karatsuba.karatsuba(1515, 1616);
 //        System.out.println("计算结果为：.........................." + result);
 
+        /** 二分法变种----二位数组 */
+        int intArray[ ][ ]={{1, 3, 5, 7},{10, 11, 16, 20},{23, 30, 34, 50}};
+        BinarySearch_2DMatrix.searchMatrixOnce(intArray, 3);
     }
 }
