@@ -62,5 +62,70 @@ public class BinarySearch {
         return -1;
     }
 
+    /**
+     * 二分法的变种问题-----Last Position of Target(取角标最后出现的位置)
+     * 找最后出现的位置时，就要让角标向高位移动
+     *
+     * @param A an integer array sorted in ascending order
+     * @param target an integer
+     * @return an integer
+     */
+    public int lastPosition(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        int start = 0; int end = nums.length - 1;
+
+        //区间范围缩小
+        /** 最终保留两个角标 */
+        while (start + 1 < end) {
+            int mid= start + (end - start) / 2;
+            if (nums[mid] == target) {
+                start = mid;
+            } else if (nums[mid] < target) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+
+        //肉眼可结
+        if (nums[end] == target) {
+            return end;
+        }
+        if (nums[start] == target) {
+            return start;
+        }
+
+        return -1;
+    }
+
+    public int firstPosition(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        int start = 0, end = nums.length - 1;
+
+        while (start + 1 < end) {
+            int mid = start + (end -start);
+            if (nums[mid] == target) {
+                end = mid;
+            } else if (nums[mid] < target) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+
+        if (nums[start] == target) {
+            return start;
+        }
+        if (nums[end] == target) {
+            return end
+        }
+        return -1;
+    }
 
 }
