@@ -45,7 +45,7 @@ public class BinarySearch {
         int low = 0;
         int high = arr.length - 1;
         int middle;
-        if (key < arr[low] || key > arr[high] || arr[low] > arr[high]) {
+        if (key < arr[low] || key > arr[high] || arr[low] > arr[high]) { /** 写这些判断条件的目的是为了保证自己的程序最起码不要先挂掉 */
             return -1;
         }
 
