@@ -3,6 +3,7 @@ package com.personal;
 import com.personal.jiuZhangALG.class2_binary.BinarySearch_2DMatrix;
 import com.personal.playWithAlg.class1_2.Object;
 import personal.jiuZhangALG.class2_binary.BinarySearch_Sqrt;
+import personal.jiuZhangALG.class2_binary.BinarySearch_WoodCut;
 
 import java.util.List;
 
@@ -57,14 +58,19 @@ public class Main {
 //        long result = Karatsuba.karatsuba(1515, 1616);
 //        System.out.println("计算结果为：.........................." + result);
 
-        /** 二分法变种----二位数组 */
+        /** 二分法变种----二维数组 */
 //        int intArray[ ][ ]={{1, 3, 5, 7},{10, 11, 16, 20},{23, 30, 34, 50}};
 //        BinarySearch_2DMatrix.searchMatrixOnce(intArray, 3);
 
         /** 求平方根的情况 */
-        int number = 10;
-//       double result =  BinarySearch_Sqrt.sqrt(number);
-        int result = BinarySearch_Sqrt.mySqrt(number);
-        System.out.println("结果是：..........." + result);
+//        int number = 10;
+////       double result =  BinarySearch_Sqrt.sqrt(number);
+//        int result = BinarySearch_Sqrt.mySqrt(number);
+//        System.out.println("结果是：..........." + result);
+
+        /** 二分法变体---二分答案 */
+       int[] L = {232, 124, 456}; int k = 7;
+       int len = BinarySearch_WoodCut.woodCut2(L, k);
+        System.out.println("结果是：..........." + len);
     }
 }
