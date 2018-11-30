@@ -6,14 +6,22 @@ package personal.jiuZhangALG.class2_binary;
 public class BinarySearch_RotatedArray {
 
     /**
-     * An element in a sorted array can be found in O(log n) time via binary search.
-     * But suppose we rotate an ascending order sorted array at some pivot unknown to
-     * you beforehand. So for instance, 1 2 3 4 5 might become 3 4 5 1 2. Devise a way
-     * to find an element in the rotated array in O(log n) time.
+     * Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+     * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+     * You are given a target value to search. If found in the array return its index, otherwise return -1.
+     * You may assume no duplicate exists in the array.
      * 当源数组被变成了 “Rotated Array （分段？ 在分段上具有单调性？）”，将原来具有单调上升的
      * 函数，从中间某个位置这段然后头尾相接变成两段具有单调性的
      *
-     * 类似于： arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
+     * 类似于： For [4, 5, 1, 2, 3] and target=1, return 2.
+     *          For [4, 5, 1, 2, 3] and target=0, return -1.
+     *          Challenge
+     *          O(logN) time
+     *
+     * 感悟：
+     *         1.这里给了target值
+     *         2.这里的核心是定位target位置，先将去单调区间确定下来。
+     *         3.即先把二分查找的区间定位到一个区间上
      */
     public static int search(int[] A, int target) {
         if (A == null || A.length == 0){ //每一种解法都必要的判断问题成立性的条件
@@ -35,7 +43,7 @@ public class BinarySearch_RotatedArray {
                 } else {
                     start = mid;
                 }
-            } else {
+            } else { //如果 A[mid] > A[start] ,此时两个分支上都有取到的数
                 if (target <= A[end] && A[mid] <= target) {
                     /** 如果满足该条件说明target落在后一段具有单调性的部分 */
                     start = mid;
@@ -60,7 +68,7 @@ public class BinarySearch_RotatedArray {
      * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
      * Find the minimum element.
      *
-     * 在螺旋数组（Rotated Array）找找到最小的数
+     * 在螺旋数组（Rotated Array）找到最小的数
      *
      * */
     public int findMin(int[] nums) {
