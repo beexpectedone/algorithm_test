@@ -4,6 +4,7 @@ import com.personal.jiuZhangALG.class2_binary.BinarySearch_2DMatrix;
 import com.personal.playWithAlg.class1_2.Object;
 import personal.jiuZhangALG.class2_binary.BinarySearch_Sqrt;
 import personal.jiuZhangALG.class2_binary.BinarySearch_WoodCut;
+import personal.jiuZhangALG.class2_binary.BinarySearch_findPeak;
 
 import java.util.List;
 
@@ -69,8 +70,13 @@ public class Main {
 //        System.out.println("结果是：..........." + result);
 
         /** 二分法变体---二分答案 */
-       int[] L = {232, 124, 456}; int k = 7;
-       int len = BinarySearch_WoodCut.woodCut2(L, k);
-        System.out.println("结果是：..........." + len);
+//       int[] L = {232, 124, 456}; int k = 7;
+//       int len = BinarySearch_WoodCut.woodCut2(L, k);
+//        System.out.println("结果是：..........." + len);
+
+        /** 二分法变体---寻找波峰*/
+        int[] A = {1, 2, 1, 3, 4, 5, 7, 6};
+        int index_result = BinarySearch_findPeak.findPeak2(A);
+        System.out.println("结果是：............" + index_result);
     }
 }
