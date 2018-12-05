@@ -5,10 +5,12 @@ import com.personal.playWithAlg.class1_2.Object;
 import personal.jiuZhangALG.class2_binary.BinarySearch_Sqrt;
 import personal.jiuZhangALG.class2_binary.BinarySearch_WoodCut;
 import personal.jiuZhangALG.class2_binary.BinarySearch_findPeak;
+import personal.jiuZhangALG.class3_binaryTree.BinaryTree_inorder_traversal;
 import personal.jiuZhangALG.class3_binaryTree.BinaryTree_postorder_traversal;
 import personal.jiuZhangALG.class3_binaryTree.BinaryTree_preorder_traversal;
 import personal.jiuZhangALG.class3_binaryTree.TreeNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -93,7 +95,9 @@ public class Main {
         node2.setLeft(node4);
         node2.setRight(node5);
 //        List<Integer> list = BinaryTree_preorder_traversal.preorderTraversal_noRecursive(node1);
-        List<Integer> list = BinaryTree_postorder_traversal.postorderTraversal_No_Recursive(node1);
+//        List<Integer> list = BinaryTree_postorder_traversal.postorderTraversal_No_Recursive(node1);
+
+        ArrayList<Integer> list = BinaryTree_inorder_traversal.inorderTraversal(node1);
         for (int item : list){
             System.out.print( item + " ");
         }
