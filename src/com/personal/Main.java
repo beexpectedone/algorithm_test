@@ -5,6 +5,9 @@ import com.personal.playWithAlg.class1_2.Object;
 import personal.jiuZhangALG.class2_binary.BinarySearch_Sqrt;
 import personal.jiuZhangALG.class2_binary.BinarySearch_WoodCut;
 import personal.jiuZhangALG.class2_binary.BinarySearch_findPeak;
+import personal.jiuZhangALG.class3_binaryTree.BinaryTree_postorder_traversal;
+import personal.jiuZhangALG.class3_binaryTree.BinaryTree_preorder_traversal;
+import personal.jiuZhangALG.class3_binaryTree.TreeNode;
 
 import java.util.List;
 
@@ -75,8 +78,24 @@ public class Main {
 //        System.out.println("结果是：..........." + len);
 
         /** 二分法变体---寻找波峰*/
-        int[] A = {1, 2, 1, 3, 4, 5, 7, 6};
-        int index_result = BinarySearch_findPeak.findPeak2(A);
-        System.out.println("结果是：............" + index_result);
+//        int[] A = {1, 2, 1, 3, 4, 5, 7, 6};
+//        int index_result = BinarySearch_findPeak.findPeak2(A);
+//        System.out.println("结果是：............" + index_result);
+
+        /** 二叉树--- 前序遍历*/
+        TreeNode node1 = new TreeNode(1);
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(5);
+        node1.setLeft(node2);
+        node1.setRight(node3);
+        node2.setLeft(node4);
+        node2.setRight(node5);
+//        List<Integer> list = BinaryTree_preorder_traversal.preorderTraversal_noRecursive(node1);
+        List<Integer> list = BinaryTree_postorder_traversal.postorderTraversal_No_Recursive(node1);
+        for (int item : list){
+            System.out.print( item + " ");
+        }
     }
 }

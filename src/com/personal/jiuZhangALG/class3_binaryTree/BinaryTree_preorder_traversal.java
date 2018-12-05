@@ -14,17 +14,20 @@ import java.util.Stack;
  * return [1,2,4,5,3].
  */
 public class BinaryTree_preorder_traversal {
-
     /**
      * Stack : last-in-first-out
      * push the right node in and then left,
      * pop the left node first then right
      * 利用Stack后进先出的特点，所以在添加node到Stack中时，先将right节点添加进去再添加left节点
      *
+     * 感悟：
+     *      每次都先将同一个层级的节点（一个或两个）压栈（先压右边节点再压左边节点），然后再弹栈；
+     *      之后再往更深一层级递进，重复上述的操作
      * @param root root tree
      * @return result list
      */
-    public List<Integer> preorderTraversal_noRecursive(TreeNode root) {
+    //version 0 :Non-Recursion(Recommend)
+    public static List<Integer> preorderTraversal_noRecursive(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         List<Integer> preorder = new ArrayList<>();
 
