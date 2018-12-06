@@ -8,11 +8,4 @@ public class TreeNode2 {
         this.left = this.right = null;
     }
 
-    public void setLeft(TreeNode2 left) {
-        this.left = left;
-    }
-
-    public void setRight(TreeNode2 right) {
-        this.right = right;
-    }
 }
