@@ -48,8 +48,39 @@ public class BinaryTree_inorder_traversal {
                 }
             } else {
                 node = node.right;
-                while (node != null){  /*判断节点是不是既是右节点还是父节点*/
+                while (node != null){  /*判断节点是不是还有子节点*/
                     stack.push(node);
+                    node = node.left; /* 处理右侧节点包含子树的情况 */
+                }
+            }
+        }
+        return result;
+    }
+
+    public ArrayList<Integer> inorderTraversal_no_recursion2(TreeNode2 root) {
+        Stack<TreeNode2> stack = new Stack<>();
+        ArrayList<Integer> result = new ArrayList<>();
+
+        while (null != root) {  //先将深入到左子树上的最深层级
+            stack.add(root);
+            root = root.left;
+        }
+
+        while (!stack.isEmpty()) {
+            TreeNode2 node = stack.peek(); //先拿出来一个节点
+            result.add(node.val); //第一次添加到集合中的是左子树最深层的最左侧的节点
+            System.out.print(node.val);
+
+            if (node.right == null) { //如果该节点没有了右侧节点，它就作为它的这个分支上最后的节点输出
+                node = stack.pop();
+                while (!stack.isEmpty() && stack.peek().right == node){ //判断节点是否为右侧节点，如果是右侧节点弹出该节点
+                    node = stack.pop(); //弹出该节点就意味着这一块的二叉树结束
+                }
+            } else { // 如果该节点不是右侧节点，则要去找他的右侧节点
+                node = node.right;
+                while (node != null) {
+                    stack.push(node);
+                    System.out.print(" ");
                     node = node.left;
                 }
             }

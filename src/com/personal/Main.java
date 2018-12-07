@@ -108,7 +108,9 @@ public class Main {
         node11.right = new TreeNode2(3);
         node11.left.left = new TreeNode2(4);
         node11.left.right = new TreeNode2(5);
-//        tree.inorderTraversal_no_recursion(node11);
-        tree.inorder(node11);
+        node11.left.right.right = new TreeNode2(6);
+        node11.left.right.right.right = new TreeNode2(7);
+        tree.inorderTraversal_no_recursion2(node11);
+//        tree.inorder(node11);
     }
 }
