@@ -99,18 +99,24 @@ public class Main {
         node5.setLeft(node8); node5.setRight(node9);
         node3.setLeft(node10);
 
+        /** 二叉树---前序遍历和后序遍历*/
 //        List<Integer> list = BinaryTree_preorder_traversal.preorderTraversal_noRecursive(node1);
 //        List<Integer> list = BinaryTree_postorder_traversal.postorderTraversal_No_Recursive(node1);
 
-        BinaryTree_inorder_traversal tree = new BinaryTree_inorder_traversal();
         TreeNode2 node11 = new TreeNode2(1);
         node11.left = new TreeNode2(2);
         node11.right = new TreeNode2(3);
         node11.left.left = new TreeNode2(4);
         node11.left.right = new TreeNode2(5);
         node11.left.right.right = new TreeNode2(6);
-        node11.left.right.right.right = new TreeNode2(7);
-        tree.inorderTraversal_no_recursion2(node11);
+        /** 二叉树---中序遍历 */
+//        BinaryTree_inorder_traversal tree = new BinaryTree_inorder_traversal();
+//        tree.inorderTraversal_no_recursion2(node11);
 //        tree.inorder(node11);
+
+        /** 二叉树---求最大深度 */
+//        int maxDepth = new BinaryTree_maxDepth().maxDepth(node11);
+        int maxDepth = new BinaryTree_maxDepth().maxDepth_by_divide(node11);
+        System.out.println(maxDepth);
     }
 }

@@ -1,2 +1,4 @@
 Binary Tree DFS Traversal(深度优先遍历)：
 preorder(根-左-右) / inorder(左-根-右) / postorder(左-右-根)
+
+程序里尽量不要出现全局变量（来自“查询最大深度”）
