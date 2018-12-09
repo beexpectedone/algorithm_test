@@ -1,4 +1,4 @@
-package personal.jiuZhangALG.class3_binaryTree;
+package com.personal.jiuZhangALG.class3_binaryTree;
 
 import java.util.ArrayList;
 import java.util.Stack;

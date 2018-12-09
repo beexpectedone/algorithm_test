@@ -1,14 +1,8 @@
 package com.personal;
 
-import com.personal.jiuZhangALG.class2_binary.BinarySearch_2DMatrix;
-import com.personal.playWithAlg.class1_2.Object;
-import personal.jiuZhangALG.class2_binary.BinarySearch_Sqrt;
-import personal.jiuZhangALG.class2_binary.BinarySearch_WoodCut;
-import personal.jiuZhangALG.class2_binary.BinarySearch_findPeak;
-import personal.jiuZhangALG.class3_binaryTree.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.personal.jiuZhangALG.class3_binaryTree.BinaryTree_lowest_common_tree;
+import com.personal.jiuZhangALG.class3_binaryTree.TreeNode;
+import com.personal.jiuZhangALG.class3_binaryTree.TreeNode2;
 
 public class Main {
 
@@ -116,7 +110,11 @@ public class Main {
 
         /** 二叉树---求最大深度 */
 //        int maxDepth = new BinaryTree_maxDepth().maxDepth(node11);
-        int maxDepth = new BinaryTree_maxDepth().maxDepth_by_divide(node11);
-        System.out.println(maxDepth);
+//        int maxDepth = new com.personal.jiuZhangALG.class3_binaryTree.BinaryTree_maxDepth().maxDepth_by_divide(node11);
+//        System.out.println(maxDepth);
+
+        /** 二叉树---求最近公共祖先*/
+        TreeNode2 ancestor = BinaryTree_lowest_common_tree.getAncestor(node11, node11.left.left, node11.left.right.right);
+        System.out.println(ancestor.val);
     }
 }

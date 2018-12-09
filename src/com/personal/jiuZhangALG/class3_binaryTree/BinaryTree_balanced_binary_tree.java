@@ -1,6 +1,4 @@
-package personal.jiuZhangALG.class3_binaryTree;
-
-import sun.reflect.generics.tree.ReturnType;
+package com.personal.jiuZhangALG.class3_binaryTree;
 
 /**
  * Given a binary tree, determine if it is height-balanced.
@@ -21,6 +19,7 @@ public class BinaryTree_balanced_binary_tree {
         return helper(root).isBalanced;
     }
 
+    // Version 1: with ResultType
     private ResultType helper(TreeNode2 root) {
         if (root == null) {
             return new ResultType(true, 0);
@@ -40,5 +39,23 @@ public class BinaryTree_balanced_binary_tree {
         return new ResultType(true, Math.max(left.maxDepth, right.maxDepth) + 1);
     }
 
+    //Version 2: without ResultType
+    private boolean isBalanced_without_ResultType(TreeNode2 root) {
+        return maxDepth(root) != -1;
+    }
+
+    private int maxDepth(TreeNode2 root) {
+        if (null == root) {
+            return 0;
+        }
+
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
+            return -1;
+        }
+
+        return Math.abs(left - right) + 1;
+    }
 
 }

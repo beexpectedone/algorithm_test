@@ -1,4 +1,4 @@
-package personal.jiuZhangALG.class3_binaryTree;
+package com.personal.jiuZhangALG.class3_binaryTree;
 
 /***
  * Given a binary tree, find its maximum depth.
