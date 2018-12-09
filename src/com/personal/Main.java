@@ -5,7 +5,9 @@ import com.personal.playWithAlg.class1_2.Object;
 import personal.jiuZhangALG.class2_binary.BinarySearch_Sqrt;
 import personal.jiuZhangALG.class2_binary.BinarySearch_WoodCut;
 import personal.jiuZhangALG.class2_binary.BinarySearch_findPeak;
+import personal.jiuZhangALG.class3_binaryTree.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -75,8 +77,46 @@ public class Main {
 //        System.out.println("结果是：..........." + len);
 
         /** 二分法变体---寻找波峰*/
-        int[] A = {1, 2, 1, 3, 4, 5, 7, 6};
-        int index_result = BinarySearch_findPeak.findPeak2(A);
-        System.out.println("结果是：............" + index_result);
+//        int[] A = {1, 2, 1, 3, 4, 5, 7, 6};
+//        int index_result = BinarySearch_findPeak.findPeak2(A);
+//        System.out.println("结果是：............" + index_result);
+
+        /** 二叉树--- 前序遍历*/
+        TreeNode node1 = new TreeNode(1);
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node6 = new TreeNode(6);
+        TreeNode node7 = new TreeNode(7);
+        TreeNode node8 = new TreeNode(8);
+        TreeNode node9 = new TreeNode(9);
+        TreeNode node10 = new TreeNode(10);
+        node1.setLeft(node2); node1.setRight(node3);
+
+        node2.setLeft(node4);node2.setRight(node5);
+        node4.setLeft(node6);node4.setRight(node7);
+        node5.setLeft(node8); node5.setRight(node9);
+        node3.setLeft(node10);
+
+        /** 二叉树---前序遍历和后序遍历*/
+//        List<Integer> list = BinaryTree_preorder_traversal.preorderTraversal_noRecursive(node1);
+//        List<Integer> list = BinaryTree_postorder_traversal.postorderTraversal_No_Recursive(node1);
+
+        TreeNode2 node11 = new TreeNode2(1);
+        node11.left = new TreeNode2(2);
+        node11.right = new TreeNode2(3);
+        node11.left.left = new TreeNode2(4);
+        node11.left.right = new TreeNode2(5);
+        node11.left.right.right = new TreeNode2(6);
+        /** 二叉树---中序遍历 */
+//        BinaryTree_inorder_traversal tree = new BinaryTree_inorder_traversal();
+//        tree.inorderTraversal_no_recursion2(node11);
+//        tree.inorder(node11);
+
+        /** 二叉树---求最大深度 */
+//        int maxDepth = new BinaryTree_maxDepth().maxDepth(node11);
+        int maxDepth = new BinaryTree_maxDepth().maxDepth_by_divide(node11);
+        System.out.println(maxDepth);
     }
 }
