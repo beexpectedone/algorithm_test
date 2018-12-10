@@ -114,7 +114,7 @@ public class Main {
 //        System.out.println(maxDepth);
 
         /** 二叉树---求最近公共祖先*/
-        TreeNode2 ancestor = BinaryTree_lowest_common_tree.getAncestor(node11, node11.left.left, node11.left.right.right);
+        TreeNode2 ancestor = BinaryTree_lowest_common_tree.getAncestor2(node11, node11.left.left, node11.left.right.right);
         System.out.println(ancestor.val);
     }
 }
