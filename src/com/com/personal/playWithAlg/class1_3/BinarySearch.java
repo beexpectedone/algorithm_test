@@ -1,4 +1,4 @@
-package personal.playWithAlg.class1_3;
+package com.personal.playWithAlg.class1_3;
 
 
 /**

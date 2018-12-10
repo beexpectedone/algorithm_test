@@ -1,4 +1,4 @@
-package personal.jiuZhangALG.class2_binary;
+package com.personal.jiuZhangALG.class2_binary;
 
 /**
  * Given a sorted array and a target value, return the index if the target is found.

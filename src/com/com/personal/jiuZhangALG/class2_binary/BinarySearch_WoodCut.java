@@ -1,4 +1,4 @@
-package personal.jiuZhangALG.class2_binary;
+package com.personal.jiuZhangALG.class2_binary;
 
 /***
  * Given n pieces of wood with length L[i] (integer array).

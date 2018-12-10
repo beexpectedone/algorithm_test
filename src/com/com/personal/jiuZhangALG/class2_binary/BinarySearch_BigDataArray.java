@@ -1,4 +1,4 @@
-package personal.jiuZhangALG.class2_binary;
+package com.personal.jiuZhangALG.class2_binary;
 
 /**
  *

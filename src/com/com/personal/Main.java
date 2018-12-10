@@ -20,8 +20,8 @@ public class Main {
 //        }
 
         /** 0 - 1 背包问题 */
-//        List<Object> srcObjs = com.personal.playWithAlg.class1_2.KnapsackProblem.initDate();
-//        new com.personal.playWithAlg.class1_2.KnapsackProblem().GreedyAlgo(srcObjs, 150);
+//        List<Object> srcObjs = com.com.personal.playWithAlg.class1_2.KnapsackProblem.initDate();
+//        new com.com.personal.playWithAlg.class1_2.KnapsackProblem().GreedyAlgo(srcObjs, 150);
 
 
         /** 字符串全排问题 */
@@ -110,7 +110,7 @@ public class Main {
 
         /** 二叉树---求最大深度 */
 //        int maxDepth = new BinaryTree_maxDepth().maxDepth(node11);
-//        int maxDepth = new com.personal.jiuZhangALG.class3_binaryTree.BinaryTree_maxDepth().maxDepth_by_divide(node11);
+//        int maxDepth = new com.com.personal.jiuZhangALG.class3_binaryTree.BinaryTree_maxDepth().maxDepth_by_divide(node11);
 //        System.out.println(maxDepth);
 
         /** 二叉树---求最近公共祖先*/
