@@ -23,6 +23,11 @@ public class BinaryTree_maxPathSum2 {
 //        return Math.max(left, right) + root.val;
 
         //root -> anynode
+        /* 如果遍历到某个分支下下了，发现该分支下两个节点的
+         * 最大值小于零，那么就取零代替 */
+        /** 这里的root.val 理解为 作为每一个有子节点你的几点
+         * 它都是一个“父节点”，父节点的值当然这一级的结果
+         * 中要包含这个 */
         return Math.max(0, Math.max(left, right)) + root.val;
     }
 }
