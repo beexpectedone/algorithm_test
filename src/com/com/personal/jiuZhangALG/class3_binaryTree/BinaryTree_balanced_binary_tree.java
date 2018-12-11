@@ -13,7 +13,10 @@ package com.personal.jiuZhangALG.class3_binaryTree;
  *    15   7              15  7
  *
  * The binary tree A is a height-balanced binary tree, but B is not.
- */
+ *
+ * 感悟：
+ *      本题转换成了求左右两支最大深度的相差是不是在0 或者 1
+ *      */
 public class BinaryTree_balanced_binary_tree {
     public boolean isBalanced(TreeNode2 root) {
         return helper(root).isBalanced;
