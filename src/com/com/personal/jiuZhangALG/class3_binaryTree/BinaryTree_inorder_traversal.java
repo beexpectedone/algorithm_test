@@ -3,18 +3,28 @@ package com.personal.jiuZhangALG.class3_binaryTree;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/**
+ * Given a binary tree, return the inorder traversal of its nodes' values.
+ * Given binary tree {1,#,2,3},
+ *    1
+ *     \
+ *      2
+ *     /
+ *    3
+ * return [1,3,2].
+ */
 public class BinaryTree_inorder_traversal {
 
     public static ArrayList<Integer> inorderTraversal(TreeNode root){
         Stack<TreeNode> stack = new Stack<>();
         ArrayList<Integer> result = new ArrayList<>();
         TreeNode curt = root;
-        while (curt != null && !stack.empty()) {
-            while (curt != null) {  // 这部分的程序是将一个分支上所有的节点全部压入栈中（类似于后序遍历）
+        while (curt != null || !stack.empty()) {
+            while (curt != null) {  // 这部分的程序是将左侧分支上所有的节点全部压入栈中（类似于后序遍历）
                 stack.add(curt);
-                curt = curt.left;
+                curt = curt.left;  // 这里curt最终在结束while操作的时候被赋值为null
             }
-            curt = stack.pop();
+            curt = stack.pop(); //保证当前的curt一定是有值的，将当前的节点弹栈，并且将节点赋值给curt
             result.add(curt.val);
             curt = curt.right;
         }
@@ -45,12 +55,18 @@ public class BinaryTree_inorder_traversal {
                      * 如果该节点自身是右侧节点，就直接弹出该节点
                      * */
                     node = stack.pop();
+                    /** 这里相当于第二/~n 次的弹出右侧节点的操作，
+                     如果这个节点一直有右侧节点的属性那么一直做
+                     弹栈的操作*/
                 }
             } else {
                 node = node.right;
                 while (node != null){  /*判断节点是不是还有子节点*/
                     stack.push(node);
-                    node = node.left; /* 处理右侧节点包含子树的情况 */
+                    /* 处理右侧节点包含子树的情况
+                    * 此时的右侧节点成为这个一部分
+                    * 二叉树的根节点 */
+                    node = node.left;
                 }
             }
         }
