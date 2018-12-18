@@ -91,6 +91,9 @@ public class BinaryTree_level_order_Traversal {
      *      2.root为根节点不变，将每次遍历的层级设置为maxLevel
      *      3.控制递归每次只进行一层递进（curtLevel > maxLevel）是return
      *
+     * 弊端：
+     *       每递进一层都需要从根节点出发，直至递进到该层级
+     *
      * @param root 根节点
      * @return
      */
