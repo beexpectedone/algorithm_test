@@ -2,6 +2,7 @@ package com.personal.jiuZhangALG.class3_binaryTree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -80,5 +81,49 @@ public class BinaryTree_level_order_Traversal {
             result.add(currentLevel);
         }
         return result;
+    }
+
+    /**
+     * 思路：
+     *      对于整棵二叉树，每次递进一层节点，将这一层节点全部存入到一个level集合当中
+     * 实现：
+     *      1.使用while(true)的方式一直往深层遍历
+     *      2.root为根节点不变，将每次遍历的层级设置为maxLevel
+     *      3.控制递归每次只进行一层递进（curtLevel > maxLevel）是return
+     *
+     * @param root 根节点
+     * @return
+     */
+    public List<List<Integer>> levelOrder_with_DFS(TreeNode2 root) {
+        List<List<Integer>> results = new ArrayList<>();
+
+        //illegal
+        if (root == null) {
+            return results;
+        }
+
+        int maxLevel = 0;
+        while (true) {
+            List<Integer> level = new ArrayList<>();
+            dfs(root, level, 0, maxLevel);
+            if (level.size() == 0) { /** 保证遍历完最深层节点后调出整个循环 */
+                break;
+            }
+            results.add(level);
+            maxLevel++;
+        }
+        return results;
+    }
+
+    private void dfs(TreeNode2 root, List<Integer> level, int curtlevel, int maxLevel) {
+        if (null == root || curtlevel > maxLevel) {
+            return;
+        }
+        if (curtlevel == maxLevel) {
+            level.add(root.val);
+        }
+
+        dfs(root.left, level, curtlevel + 1, maxLevel);
+        dfs(root.right, level, curtlevel + 1, maxLevel);
     }
 }
