@@ -13,6 +13,9 @@ import java.util.Stack;
  * 1      11
  *  \       \
  *   6       12
+ *
+ *   感悟：
+ *          与BSTIterator的区别是：它在hasNext() 方法中可能会做压栈操作
  */
 public class BinaryTree_BSTIterator2 {
     private Stack<TreeNode2> stack = new Stack<>();

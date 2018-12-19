@@ -38,7 +38,8 @@ public class BinaryTree_preorder_traversal {
         while (!stack.empty()){
             TreeNode node = stack.pop();
             preorder.add(node.val);
-            if (node.right != null){
+            if (node.right != null){  /* 先把右侧子节点压栈，再压左侧子节点
+                                         因为弹栈的时候是先弹出左侧节点的*/
                 stack.push(node.right);
             }
             if (node.left != null) {

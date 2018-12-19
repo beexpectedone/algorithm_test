@@ -44,20 +44,24 @@ public class BinaryTree_postorder_traversal {
         if (null == root) {
             return result;
         }
-        stack.push(root);
+        stack.push(root); // 先将root节点压栈
         while (!stack.empty()) {
             curr = stack.peek();  //don not pop this item
+            /* if部分为压栈操作，
+               这里还是会先把所有左侧子节点全部压栈 */
             if (prev == null || prev.left == curr || prev.right == curr) { // traverse down the tree
-                if (curr.left != null) {
+                if (curr.left != null) {  // 这里最开始做的就是将最左侧一支节点全部压栈
                     stack.push(curr.left);
                 } else if (curr.right != null) {
                     stack.push(curr.right);
                 }
+                      // 这里只关注从下往上遍历时，当前节点的左侧的子节点
             }else if (curr.left == prev) { // traverse up the tree from the left
                 if (curr.right != null) {
                     stack.push(curr.right);
                 }
             }else {
+                /* 一种处理的情况： pre = curr ，说明此时已经到最后一个节点 */
                 result.add(curr.val);
                 stack.pop();
             }
@@ -65,4 +69,38 @@ public class BinaryTree_postorder_traversal {
         }
         return result;
     }
+
+    public static ArrayList<Integer> postorderTraversal_No_RecursiveTest(TreeNode2 root) {
+        ArrayList<Integer> result = new ArrayList<>();
+        Stack<TreeNode2> stack = new Stack<>();
+        TreeNode2 prev = null;
+        TreeNode2 curr = root;
+
+        if (null == root) {
+            return result;
+        }
+
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            curr = stack.peek();
+            if (null == prev || prev.left == curr || prev.right == curr){
+                if (null != curr.left) {
+                    stack.push(curr.left);
+                }else if(null != curr.right) {
+                    stack.push(curr.right);
+                }
+            } else if (curr.left == prev){
+                if (curr.right != null) {
+                    stack.push(curr.right);
+                    System.out.println(" ");
+                }
+            } else {
+                result.add(curr.val);
+                stack.pop();
+            }
+            prev = curr;
+        }
+        return result;
+    }
+
 }

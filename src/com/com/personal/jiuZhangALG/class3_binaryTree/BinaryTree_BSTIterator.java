@@ -47,10 +47,10 @@ public class BinaryTree_BSTIterator {
                 stack.pop();
             }
         } else {
-            node = node.right;
+            node = node.right;  // 如果节点的右侧节点不为空，那么获取到该右侧节点
             while (node != null) {
                 stack.push(node);
-                node = node.left;
+                node = node.left; // 因为是做类似于“中序遍历”的事，那么节点的读取方式就要符合 “左 - 中 - 右” 的顺序
             }
         }
         return curt;
