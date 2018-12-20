@@ -70,15 +70,19 @@ public class DynamicProgramming1_triangle {
     }
 
     private int[][] minSum;
-    public int memorizeSearch(int x, int y,int n, int[][] triangle) {
+    private int n;
+    private int[][] triangle;
+    public int memorizeSearch(int x, int y) {
         if (x >= n){
             return 0;
         }
         if (minSum[x][y] != Integer.MAX_VALUE) {
+            //第一次进来后，会给minSum[x][y] 赋值，之后每次进来都不会再给给minSum[x][y]赋值
+            //而是会在if判断的时候就会return回去，从而不会进入到下面的二分的步骤当中
             return minSum[x][y];
         }
-        minSum[x][y] = Math.min(memorizeSearch(x + 1, y, n,triangle),
-                                memorizeSearch(x + 1, y + 1, n, triangle))
+        minSum[x][y] = Math.min(memorizeSearch(x + 1, y),
+                                memorizeSearch(x + 1, y + 1))
                                 + triangle[x][y];
         return minSum[x][y];
     }
@@ -92,13 +96,15 @@ public class DynamicProgramming1_triangle {
             return -1;
         }
 
-        int n = triangle.length;
-        for (int i = 0; i < n; i++){  //minSum 相当于一个哈希表（hashmap）
+        this.n = triangle.length;
+        this.triangle = triangle;
+        this.minSum = new int[n][n];
+
+        for (int i = 0; i < n; i++){  //首先对minSum二维数组进行初始化
             for (int j = 0; j < n; j++){
                 minSum[i][j] = Integer.MAX_VALUE;
             }
         }
-        return memorizeSearch(0,0, n, triangle);
+        return memorizeSearch(0,0);
     }
-
 }
