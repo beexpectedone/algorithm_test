@@ -97,12 +97,12 @@ public class Main {
 //        List<Integer> list = BinaryTree_preorder_traversal.preorderTraversal_noRecursive(node1);
 //        List<Integer> list = BinaryTree_postorder_traversal.postorderTraversal_No_Recursive(node1);
 
-        TreeNode2 node11 = new TreeNode2(1);
-        node11.left = new TreeNode2(2);
-        node11.right = new TreeNode2(3);
-        node11.left.left = new TreeNode2(4);
-        node11.left.right = new TreeNode2(5);
-        node11.left.right.right = new TreeNode2(6);
+//        TreeNode2 node11 = new TreeNode2(1);
+//        node11.left = new TreeNode2(2);
+//        node11.right = new TreeNode2(3);
+//        node11.left.left = new TreeNode2(4);
+//        node11.left.right = new TreeNode2(5);
+//        node11.left.right.right = new TreeNode2(6);
         /** 二叉树---中序遍历 */
 //        BinaryTree_inorder_traversal tree = new BinaryTree_inorder_traversal();
 //        tree.inorderTraversal_no_recursion2(node11);
@@ -114,7 +114,8 @@ public class Main {
 //        System.out.println(maxDepth);
 
         /** 二叉树---求最近公共祖先*/
-        TreeNode2 ancestor = BinaryTree_lowest_common_tree.getAncestor2(node11, node11.left.left, node11.left.right.right);
-        System.out.println(ancestor.val);
+//        TreeNode2 ancestor = BinaryTree_lowest_common_tree.getAncestor2(node11, node11.left.left, node11.left.right.right);
+//        System.out.println(ancestor.val);
+
     }
 }

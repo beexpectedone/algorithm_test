@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 public class BinaryTree_my_linkedlist {
     private int size;
-    private ListNode<T> head;
+    private ListNode head;
 
     /*内部类ListNode*/
     static class ListNode<T> {
@@ -48,56 +48,56 @@ public class BinaryTree_my_linkedlist {
      *      遍历list表到最后一个元素的位置，然后将该元素添加上去
      * @param val 要添加的元素
      */
-    public void add(T val) {
-        ListNode<T> cur = new ListNode<>(val);
-        if(size == 0) {
-            head.setNext(cur);
-            size++;
-            return;
-        }
-
-        ListNode<T> prev = head;
-        while(prev.getNext() != null) {
-            prev = prev.getNext();
-        }
-
-        prev.setNext(cur);
-        size++;
-        return;
-    }
+//    public void add(T val) {
+//        ListNode cur = new ListNode<>(val);
+//        if(size == 0) {
+//            head.setNext(cur);
+//            size++;
+//            return;
+//        }
+//
+//        ListNode prev = head;
+//        while(prev.getNext() != null) {
+//            prev = prev.getNext();
+//        }
+//
+//        prev.setNext(cur);
+//        size++;
+//        return;
+//    }
 
     /**
      * 思路：
      *      遍历找到“删除元素”的前一个元素
      *      找到“删除元素”的后一个元素
      *      将后一个元素，设置给 前一个元素的next
-     * @param val 要删除的元素
+     * @param
      * @return
      */
-    public boolean remove(T val) {
-        if(size == 0) {
-            throw new NoSuchElementException();
-        }
-
-        ListNode<T> cur = head;
-        ListNode<T> prev = null;
-        while(cur.getNext() != null && cur.getNext().getValue() != val) {
-            prev = cur;
-            //最终获取到的cur是T的前一项
-            cur = cur.getNext();
-        }
-
-        if(cur.getNext() != null && cur.getNext().getValue() == val) {
-            prev = cur;
-            cur = cur.getNext(); //找到要删除的 cur
-            prev.setNext(cur.getNext());  // 将当前cur中的next 赋给prev中的next元素
-            size--;
-        }
-        else {
-            return false;
-        }
-        return true;
-    }
+//    public boolean remove(T val) {
+//        if(size == 0) {
+//            throw new NoSuchElementException();
+//        }
+//
+//        ListNode cur = head;
+//        ListNode prev = null;
+//        while(cur.getNext() != null && cur.getNext().getValue() != val) {
+//            prev = cur;
+//            //最终获取到的cur是T的前一项
+//            cur = cur.getNext();
+//        }
+//
+//        if(cur.getNext() != null && cur.getNext().getValue() == val) {
+//            prev = cur;
+//            cur = cur.getNext(); //找到要删除的 cur
+//            prev.setNext(cur.getNext());  // 将当前cur中的next 赋给prev中的next元素
+//            size--;
+//        }
+//        else {
+//            return false;
+//        }
+//        return true;
+//    }
 
     public int size() {
         return size;
@@ -119,13 +119,13 @@ public class BinaryTree_my_linkedlist {
      * @param index 元素角标
      * @return
      */
-    public ListNode<T> get(int index) {
+    public ListNode get(int index) {
         if(index >= size) {
             throw new ArrayIndexOutOfBoundsException();
         }
 
         int curIndex = index;
-        ListNode<T> cur = head;
+        ListNode cur = head;
 
         while(cur.getNext() != null && curIndex-- > 0) {
             cur = cur.getNext();
@@ -139,7 +139,7 @@ public class BinaryTree_my_linkedlist {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        ListNode<T> cur = head;
+        ListNode cur = head;
         sb.append(cur.getValue() + "->");
 
         while(cur.getNext() != null) {

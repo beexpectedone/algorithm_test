@@ -79,6 +79,8 @@ public class DynamicProgramming1_triangle {
         if (minSum[x][y] != Integer.MAX_VALUE) {
             //第一次进来后，会给minSum[x][y] 赋值，之后每次进来都不会再给给minSum[x][y]赋值
             //而是会在if判断的时候就会return回去，从而不会进入到下面的二分的步骤当中
+            //之后在循环到该点的位置时，如果发现该点不是初始值，则证明该点在之前已经被求
+            //过最小值了
             return minSum[x][y];
         }
         minSum[x][y] = Math.min(memorizeSearch(x + 1, y),
@@ -86,7 +88,6 @@ public class DynamicProgramming1_triangle {
                                 + triangle[x][y];
         return minSum[x][y];
     }
-
 
     public int minimumTotalMemorize(int[][] triangle) {
         if (triangle == null || triangle.length == 0) {

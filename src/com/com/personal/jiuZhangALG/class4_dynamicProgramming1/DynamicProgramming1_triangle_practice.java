@@ -40,6 +40,7 @@ public class DynamicProgramming1_triangle_practice {
         return best;
     }
 
+    //从下往上的方式遍历
     public int minimumTotal_bottom_up(int[][] triangle) {
         //illegal
         if (null == triangle || triangle.length == 0) {
