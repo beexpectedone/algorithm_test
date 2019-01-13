@@ -4,4 +4,4 @@ read -r -p 'branch: ' branch
 git add .
 git add -u
 git commit -m "$desc"
-git push origin "$branch"
+git push origin $branch
