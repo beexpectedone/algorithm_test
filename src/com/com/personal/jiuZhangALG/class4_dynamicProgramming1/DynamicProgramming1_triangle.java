@@ -106,6 +106,7 @@ public class DynamicProgramming1_triangle {
                 minSum[i][j] = Integer.MAX_VALUE;
             }
         }
+        System.out.println("测试shell自动提交脚本");
         return memorizeSearch(0,0);
     }
 }
