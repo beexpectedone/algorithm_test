@@ -85,7 +85,7 @@ public class DynamicProgramming1_triangle {
         }
         minSum[x][y] = Math.min(memorizeSearch(x + 1, y),
                                 memorizeSearch(x + 1, y + 1))
-                                + triangle[x][y];
+                                + triangle[x][y]; /** 程序运行后还是最先计算赋值出最下面一行的值 */
         return minSum[x][y];
     }
 
