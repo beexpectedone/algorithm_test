@@ -4,4 +4,5 @@ read -r -p 'branch: ' branch
 git add .
 git add -u
 git commit -m "$desc"
-git push origin $branch
+git push origin $branch 
+#if the variable was in double-quotes it's not parsed， 如果这里的写成“$branch”，则branch变量就不会编译而被原样输出，而原样输出的是string，就没法被当做是分支名

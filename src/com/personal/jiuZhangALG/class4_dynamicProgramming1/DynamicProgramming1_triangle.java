@@ -73,7 +73,7 @@ public class DynamicProgramming1_triangle {
     private int n;
     private int[][] triangle;
     public int memorizeSearch(int x, int y) {
-        if (x >= n){
+        if (x >= n){ //边界判断
             return 0;
         }
         if (minSum[x][y] != Integer.MAX_VALUE) {
@@ -86,6 +86,19 @@ public class DynamicProgramming1_triangle {
         minSum[x][y] = Math.min(memorizeSearch(x + 1, y),
                                 memorizeSearch(x + 1, y + 1))
                                 + triangle[x][y]; /** 程序运行后还是最先计算赋值出最下面一行的值 */
+        return minSum[x][y];
+    }
+
+    public int memorizeSearchPractice(int x, int y) {
+        if (x >= n) {
+            return 0;
+        }
+        if (minSum[x][y] != Integer.MAX_VALUE) {
+            return minSum[x][y];
+        }
+        minSum[x][y] = Math.max(memorizeSearch(x + 1, y),
+                                memorizeSearch(x + 1, y + 1))
+                       + triangle[x][y];
         return minSum[x][y];
     }
 
