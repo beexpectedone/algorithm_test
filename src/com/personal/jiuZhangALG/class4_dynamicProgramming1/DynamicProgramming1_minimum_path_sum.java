@@ -5,7 +5,8 @@ package com.personal.jiuZhangALG.class4_dynamicProgramming1;
  * find a path from top left to bottom right which minimizes the sum of all numbers along its path.
  * note:
  *      You can only move either down or right at any point in time.
- * 给一个矩阵坐标点，求从左上角到右下角最短路径和
+ * 给一个矩阵坐标点，求从左上角到右下角最短路径和，
+ * 可以理解为给出一个二维数组，求从左上角的点到右下角的点之间的最短路径
  *
  *感悟： 本质上还是让数组每一个位置的值都等于之前最小值总和加上该点的值
  *
@@ -41,6 +42,7 @@ public class DynamicProgramming1_minimum_path_sum {
         return sum[M - 1][N - 1];
     }
 
+    /** 使用打印路径的方式 */
     public int minPathSum_with_print_path(int[][] A){
         //illegal
         if (A == null || A.length == 0 || A[0].length == 0){
