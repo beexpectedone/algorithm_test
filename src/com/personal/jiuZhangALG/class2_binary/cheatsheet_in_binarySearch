@@ -1,9 +1,0 @@
-通用的二分法模板：
-start + 1 < end
-int mid = start + (end - start) / 2
-A[mid] === <>
-A[start] A[end] target
-
-
-二分法进一步理解：保留有答案的那个部分
-（二分法本质上就是不断地缩小答案的区间，保留有答案的那一个部分）
