@@ -3,9 +3,16 @@
 
 通用的二分法模板：
 start + 1 < end
+===》 写成 while( start + 1 < end )的形式，也是为了避免死循环的出现
+
 int mid = start + (end - start) / 2
+===》将 mid 写成这个形式时，是为了保证mid在某些情况下不越界，比如在取Integer值，
+
+当end = 	Integer.MAX_VALUE时就有可能出现溢出的情况
 A[mid] === <>
 A[start] A[end] target
+===》 在最后加上这一个部分，判断target值是和start还是和end值进行比较，
+将所有可以使用二分法的问题都转换为找firstPosition 和 lastPosition的问题（这部分是重点）
 
 两类二分法
     二分位置：Binary search on index
