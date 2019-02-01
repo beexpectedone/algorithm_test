@@ -14,6 +14,9 @@ public class BinarySearch_RotatedArrayPractice {
         int mid;
 
         while (start + 1 < end) {
+            /* 不写成 (start + end) /2 可以避免出现
+            例如 end = Integer.MAX_VALUE 之后出现
+             溢出的情况，大部分情况下是为了装逼*/
             mid = start + (end - start) / 2;
             if (A[mid] == target) {
                 return mid;
